@@ -1,0 +1,25 @@
+﻿@page "/import-file"
+
+@using DriveImport.Components
+@using DriveImport.Services
+@using YANLib
+
+@inject IToastService ToastService
+@inject IDriveService DriveService
+
+<PageTitle>Import File</PageTitle>
+<h1>Import File</h1>
+
+@if (Names.IsEmptyOrNull())
+{
+    <LoadingIndicator />
+}
+else
+{
+    <ul class="mt-4">
+        @foreach (var name in Names)
+        {
+            <li>@name</li>
+        }
+    </ul>
+}

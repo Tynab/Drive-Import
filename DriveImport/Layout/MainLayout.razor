@@ -1,0 +1,31 @@
+﻿@using Blazored.Toast
+@using Blazored.Toast.Services
+@using static Blazored.Toast.Configuration.IconType
+@using static Blazored.Toast.Configuration.ToastPosition
+
+@inject IToastService ToastService
+
+@inherits LayoutComponentBase
+
+<BlazoredToasts Position="BottomRight"
+                Timeout="3"
+                ShowProgressBar="true"
+                IconType="FontAwesome"
+                InfoIcon="fa fa-info"
+                SuccessIcon="fa fa-check"
+                WarningIcon="fa fa-exclamation"
+                ErrorIcon="fa fa-bug" />
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">@Body</article>
+    </main>
+</div>
